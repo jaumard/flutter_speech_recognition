@@ -1,0 +1,22 @@
+PODS:
+  - Flutter (1.0.0)
+  - flutter_speech (0.0.1):
+    - Flutter
+
+DEPENDENCIES:
+  - Flutter (from `/Users/jaumard/flutter/bin/cache/artifacts/engine/ios`)
+  - flutter_speech (from `/Users/jaumard/IdeaProjects/flutter_speech_recognition/ios`)
+
+EXTERNAL SOURCES:
+  Flutter:
+    :path: "/Users/jaumard/flutter/bin/cache/artifacts/engine/ios"
+  flutter_speech:
+    :path: "/Users/jaumard/IdeaProjects/flutter_speech_recognition/ios"
+
+SPEC CHECKSUMS:
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  flutter_speech: dfa314b1f47e8e680a029c3705b3de22ddfceaf1
+
+PODFILE CHECKSUM: 664ab11712d2619cb419ad8b5805f475ae697ead
+
+COCOAPODS: 1.6.0

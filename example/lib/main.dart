@@ -1,7 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speech/flutter_speech.dart';
 
 void main() {
+  debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
   runApp(new MyApp());
 }
 
@@ -76,10 +78,18 @@ class _MyAppState extends State<MyApp> {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  new Expanded(child: new Container(padding: const EdgeInsets.all(8.0), color: Colors.grey.shade200, child: new Text(transcription))),
+                  new Expanded(
+                      child: new Container(
+                          padding: const EdgeInsets.all(8.0),
+                          color: Colors.grey.shade200,
+                          child: new Text(transcription))),
                   _buildButton(
-                    onPressed: _speechRecognitionAvailable && !_isListening ? () => start() : null,
-                    label: _isListening ? 'Listening...' : 'Listen (${selectedLang.code})',
+                    onPressed: _speechRecognitionAvailable && !_isListening
+                        ? () => start()
+                        : null,
+                    label: _isListening
+                        ? 'Listening...'
+                        : 'Listen (${selectedLang.code})',
                   ),
                   _buildButton(
                     onPressed: _isListening ? () => cancel() : null,
@@ -128,17 +138,20 @@ class _MyAppState extends State<MyApp> {
         });
       });
 
-  void cancel() => _speech.cancel().then((_) => setState(() => _isListening = false));
+  void cancel() =>
+      _speech.cancel().then((_) => setState(() => _isListening = false));
 
   void stop() => _speech.stop().then((_) {
         setState(() => _isListening = false);
       });
 
-  void onSpeechAvailability(bool result) => setState(() => _speechRecognitionAvailable = result);
+  void onSpeechAvailability(bool result) =>
+      setState(() => _speechRecognitionAvailable = result);
 
   void onCurrentLocale(String locale) {
     print('_MyAppState.onCurrentLocale... $locale');
-    setState(() => selectedLang = languages.firstWhere((l) => l.code == locale));
+    setState(
+        () => selectedLang = languages.firstWhere((l) => l.code == locale));
   }
 
   void onRecognitionStarted() {

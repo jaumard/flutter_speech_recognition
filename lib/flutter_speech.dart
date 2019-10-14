@@ -8,7 +8,8 @@ typedef void StringResultHandler(String text);
 
 /// the channel to control the speech recognition
 class SpeechRecognition {
-  static const MethodChannel _channel = const MethodChannel('com.flutter.speech_recognition');
+  static const MethodChannel _channel =
+      const MethodChannel('com.flutter.speech_recognition');
 
   static final SpeechRecognition _speech = new SpeechRecognition._internal();
 
@@ -29,7 +30,8 @@ class SpeechRecognition {
   VoidCallback errorHandler;
 
   /// ask for speech  recognizer permission
-  Future activate(String locale) => _channel.invokeMethod("speech.activate", locale);
+  Future activate(String locale) =>
+      _channel.invokeMethod("speech.activate", locale);
 
   /// start listening
   Future listen() => _channel.invokeMethod("speech.listen");
@@ -64,16 +66,20 @@ class SpeechRecognition {
   }
 
   // define a method to handle availability / permission result
-  void setAvailabilityHandler(AvailabilityHandler handler) => availabilityHandler = handler;
+  void setAvailabilityHandler(AvailabilityHandler handler) =>
+      availabilityHandler = handler;
 
   // define a method to handle recognition result
-  void setRecognitionResultHandler(StringResultHandler handler) => recognitionResultHandler = handler;
+  void setRecognitionResultHandler(StringResultHandler handler) =>
+      recognitionResultHandler = handler;
 
   // define a method to handle native call
-  void setRecognitionStartedHandler(VoidCallback handler) => recognitionStartedHandler = handler;
+  void setRecognitionStartedHandler(VoidCallback handler) =>
+      recognitionStartedHandler = handler;
 
   // define a method to handle native call
-  void setRecognitionCompleteHandler(StringResultHandler handler) => recognitionCompleteHandler = handler;
+  void setRecognitionCompleteHandler(StringResultHandler handler) =>
+      recognitionCompleteHandler = handler;
 
   void setErrorHandler(VoidCallback handler) => errorHandler = handler;
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="687edc03-8d42-4992-ba4a-a025b5146b98" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/android/src/main/java/com/flutter/speech_recognition/flutter_speech_recognition/FlutterSpeechRecognitionPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/java/com/flutter/speech_recognition/flutter_speech/FlutterSpeechRecognitionPlugin.java" afterDir="false" />
@@ -18,16 +19,56 @@
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
+=======
+    <list default="true" id="687edc03-8d42-4992-ba4a-a025b5146b98" name="Default Changelist" comment="Initial commit">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/example_lib_main_dart.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/example_lib_main_dart.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/CHANGELOG.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/AppDelegate.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Base.lproj/MainMenu.xib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Configs/Debug.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Configs/Release.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/ExampleWindow.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.m" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Podfile" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Podfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Runner-Bridging-Header.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/macos/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/macos/Runner.xcodeproj/project.pbxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_speech_recognition.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_speech_recognition.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Assets/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/flutter_speech.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/flutter_speech.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Classes/FlutterSpeechRecognitionPlugin.m" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Classes/FlutterSpeechRecognitionPlugin.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/flutter_speech.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/macos/flutter_speech.podspec" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
+>>>>>>> add mac OSX support
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ChangesViewManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
   </component>
+<<<<<<< HEAD
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
@@ -106,84 +147,13 @@
       <find>==</find>
     </findStrings>
   </component>
+=======
+>>>>>>> add mac OSX support
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/android/src/main/java/com/flutter/speech_recognition/flutter_speech_recognition/FlutterSpeechRecognitionPlugin.java" />
-        <option value="$PROJECT_DIR$/test/flutter_speech_recognition_test.dart" />
-        <option value="$PROJECT_DIR$/example/test/widget_test.dart" />
-        <option value="$PROJECT_DIR$/lib/flutter_speech_recognition.dart" />
-        <option value="$PROJECT_DIR$/macos/example_plugin.podspec" />
-        <option value="$PROJECT_DIR$/LICENSE" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/CHANGELOG.md" />
-        <option value="$PROJECT_DIR$/example/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/example/lib/main.dart" />
-        <option value="$PROJECT_DIR$/example/ios/Podfile" />
-        <option value="$PROJECT_DIR$/example/ios/Podfile.lock" />
-        <option value="$PROJECT_DIR$/ios/flutter_speech_recognition.podspec" />
-        <option value="$PROJECT_DIR$/macos/Classes/FlutterSpeechRecognitionPlugin.h" />
-        <option value="$PROJECT_DIR$/macos/Classes/FlutterSpeechRecognitionPlugin.m" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1281" />
-    <option name="height" value="952" />
-  </component>
+  <component name="ProjectId" id="1R9b5fWmriqaY9VsDO43du4P7Oo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="flutter_speech_recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_speech_recognition" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_speech_recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_speech_recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_speech_recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_speech_recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
-              <item name="Classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_speech_recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_speech_recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_speech_recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_speech_recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="macos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flutter_speech_recognition" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flutter_speech_recognition" type="462c0819:PsiDirectoryNode" />
-              <item name="macos" type="462c0819:PsiDirectoryNode" />
-              <item name="Classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -192,11 +162,14 @@
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/macos" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="io.senya.intellij.settings.SenyaConfigurable" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="PsiViewer.ProjectComponent">
@@ -225,11 +198,15 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Flutter.example/lib/main.dart">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter" singleton="false">
       <option name="filePath" value="$PROJECT_DIR$/example/lib/main.dart" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Flutter.example/lib/main.dart" />
+      <item itemvalue="Flutter.main.dart" />
+    </list>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -241,7 +218,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1560865903639</updated>
+<<<<<<< HEAD
       <workItem from="1560865923341" duration="25160000" />
+=======
+      <workItem from="1560865923341" duration="25421000" />
+      <workItem from="1561311126202" duration="29000" />
+      <workItem from="1569082080262" duration="8296000" />
+      <workItem from="1569309693111" duration="1156000" />
+      <workItem from="1569780747874" duration="591000" />
+      <workItem from="1569781371828" duration="597000" />
+      <workItem from="1569935110359" duration="571000" />
+      <workItem from="1570281217376" duration="700000" />
+      <workItem from="1570513387161" duration="330000" />
+      <workItem from="1570515503554" duration="1787000" />
+      <workItem from="1570718509826" duration="7250000" />
+>>>>>>> add mac OSX support
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1561127346464</created>
@@ -267,6 +258,7 @@
     <option name="localTasksCounter" value="4" />
     <servers />
   </component>
+<<<<<<< HEAD
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="25160000" />
   </component>
@@ -310,12 +302,28 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+=======
+>>>>>>> add mac OSX support
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
+    <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="true" />
     <MESSAGE value="Initial commit" />
     <option name="LAST_COMMIT_MESSAGE" value="Initial commit" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
@@ -325,27 +333,28 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
-          <line>149</line>
+          <line>164</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
-          <line>154</line>
+          <line>169</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
-          <line>144</line>
+          <line>159</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="Dart">
           <url>file://$PROJECT_DIR$/example/lib/main.dart</url>
-          <line>122</line>
+          <line>134</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
+<<<<<<< HEAD
   <component name="editorHistoryManager">
     <entry file="file://$USER_HOME$/Downloads/speech_recognition-master/android/src/main/java/bz/rxla/flutter/speechrecognition/SpeechRecognitionPlugin.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -515,6 +524,8 @@
       </provider>
     </entry>
   </component>
+=======
+>>>>>>> add mac OSX support
   <component name="masterDetails">
     <states>
       <state key="ProjectJDKs.UI">

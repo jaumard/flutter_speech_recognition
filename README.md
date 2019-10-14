@@ -4,11 +4,11 @@ Based on [rxlabz plugin](https://github.com/rxlabz/speech_recognition)
 
 Objective C and Java Flutter plugin.
 
-A flutter plugin to use the speech recognition iOS10+ / Android 4.1+
+A flutter plugin to use the speech recognition iOS10+ / Android 4.1+ and MacOS 10.15+
 
 ## Setup:
 
-### iOS
+### iOS and MacOS
 Add this on your `Info.plist`
 
 ```

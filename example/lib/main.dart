@@ -4,7 +4,7 @@ import 'package:flutter_speech/flutter_speech.dart';
 
 void main() {
   debugDefaultTargetPlatformOverride = TargetPlatform.fuchsia;
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
 const languages = const [
@@ -24,11 +24,11 @@ class Language {
 
 class MyApp extends StatefulWidget {
   @override
-  _MyAppState createState() => new _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  SpeechRecognition _speech;
+  late SpeechRecognition _speech;
 
   bool _speechRecognitionAvailable = false;
   bool _isListening = false;
@@ -47,7 +47,7 @@ class _MyAppState extends State<MyApp> {
   // Platform messages are asynchronous, so we initialize in an async method.
   void activateSpeechRecognizer() {
     print('_MyAppState.activateSpeechRecognizer... ');
-    _speech = new SpeechRecognition();
+    _speech = SpeechRecognition();
     _speech.setAvailabilityHandler(onSpeechAvailability);
     _speech.setRecognitionStartedHandler(onRecognitionStarted);
     _speech.setRecognitionResultHandler(onRecognitionResult);
@@ -60,29 +60,29 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
-      home: new Scaffold(
-        appBar: new AppBar(
-          title: new Text('SpeechRecognition'),
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('SpeechRecognition'),
           actions: [
-            new PopupMenuButton<Language>(
+            PopupMenuButton<Language>(
               onSelected: _selectLangHandler,
               itemBuilder: (BuildContext context) => _buildLanguagesWidgets,
             )
           ],
         ),
-        body: new Padding(
-            padding: new EdgeInsets.all(8.0),
-            child: new Center(
-              child: new Column(
+        body: Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: Column(
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  new Expanded(
-                      child: new Container(
+                  Expanded(
+                      child: Container(
                           padding: const EdgeInsets.all(8.0),
                           color: Colors.grey.shade200,
-                          child: new Text(transcription))),
+                          child: Text(transcription))),
                   _buildButton(
                     onPressed: _speechRecognitionAvailable && !_isListening
                         ? () => start()
@@ -107,10 +107,10 @@ class _MyAppState extends State<MyApp> {
   }
 
   List<CheckedPopupMenuItem<Language>> get _buildLanguagesWidgets => languages
-      .map((l) => new CheckedPopupMenuItem<Language>(
+      .map((l) => CheckedPopupMenuItem<Language>(
             value: l,
             checked: selectedLang == l,
-            child: new Text(l.name),
+            child: Text(l.name),
           ))
       .toList();
 
@@ -118,12 +118,11 @@ class _MyAppState extends State<MyApp> {
     setState(() => selectedLang = lang);
   }
 
-  Widget _buildButton({String label, VoidCallback onPressed}) => new Padding(
-      padding: new EdgeInsets.all(12.0),
-      child: new RaisedButton(
-        color: Colors.cyan.shade600,
+  Widget _buildButton({required String label, VoidCallback? onPressed}) => Padding(
+      padding: EdgeInsets.all(12.0),
+      child: ElevatedButton(
         onPressed: onPressed,
-        child: new Text(
+        child: Text(
           label,
           style: const TextStyle(color: Colors.white),
         ),

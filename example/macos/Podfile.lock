@@ -5,18 +5,18 @@ PODS:
 
 DEPENDENCIES:
   - flutter_speech (from `Flutter/ephemeral/.symlinks/plugins/flutter_speech/macos`)
-  - FlutterMacOS (from `Flutter/ephemeral/.symlinks/flutter/darwin-x64`)
+  - FlutterMacOS (from `Flutter/ephemeral`)
 
 EXTERNAL SOURCES:
   flutter_speech:
     :path: Flutter/ephemeral/.symlinks/plugins/flutter_speech/macos
   FlutterMacOS:
-    :path: Flutter/ephemeral/.symlinks/flutter/darwin-x64
+    :path: Flutter/ephemeral
 
 SPEC CHECKSUMS:
   flutter_speech: 5ef621aa91ebefe17ec7a585b3e2032c230b275f
-  FlutterMacOS: 15bea8a44d2fa024068daa0140371c020b4b6ff9
+  FlutterMacOS: 57701585bf7de1b3fc2bb61f6378d73bbdea8424
 
-PODFILE CHECKSUM: 9ca635a3b60a57beafb445fbebed5afead51f70b
+PODFILE CHECKSUM: 6eac6b3292e5142cfc23bdeb71848a40ec51c14c
 
-COCOAPODS: 1.6.0
+COCOAPODS: 1.10.1

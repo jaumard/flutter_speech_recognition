@@ -19,15 +19,15 @@ class SpeechRecognition {
     _channel.setMethodCallHandler(_platformCallHandler);
   }
 
-  AvailabilityHandler availabilityHandler;
+  late AvailabilityHandler availabilityHandler;
 
-  StringResultHandler recognitionResultHandler;
+  late StringResultHandler recognitionResultHandler;
 
-  VoidCallback recognitionStartedHandler;
+  late VoidCallback recognitionStartedHandler;
 
-  StringResultHandler recognitionCompleteHandler;
+  late StringResultHandler recognitionCompleteHandler;
 
-  VoidCallback errorHandler;
+  late VoidCallback errorHandler;
 
   /// ask for speech  recognizer permission
   Future activate(String locale) =>

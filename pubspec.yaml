@@ -1,11 +1,11 @@
 name: flutter_speech
 description: Flutter plugin to support voice recognition on Android, iOS and Mac OSX
-version: 1.1.0
+version: 2.0.0
 author: jaumard <jimmy.aumard@gmail.com>
 homepage: https://github.com/jaumard/flutter_speech_recognition
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:

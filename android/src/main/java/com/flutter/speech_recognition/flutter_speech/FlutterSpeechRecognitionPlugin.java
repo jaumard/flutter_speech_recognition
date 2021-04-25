@@ -1,7 +1,6 @@
 package com.flutter.speech_recognition.flutter_speech;
 
 import android.Manifest;
-import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -10,47 +9,33 @@ import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.util.Log;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 
+import java.util.ArrayList;
+
+import io.flutter.embedding.engine.plugins.FlutterPlugin;
+import io.flutter.embedding.engine.plugins.activity.ActivityAware;
+import io.flutter.embedding.engine.plugins.activity.ActivityPluginBinding;
 import io.flutter.plugin.common.MethodCall;
 import io.flutter.plugin.common.MethodChannel;
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler;
 import io.flutter.plugin.common.MethodChannel.Result;
 import io.flutter.plugin.common.PluginRegistry;
-import io.flutter.plugin.common.PluginRegistry.Registrar;
-
-import java.util.ArrayList;
 
 /** FlutterSpeechRecognitionPlugin */
-public class FlutterSpeechRecognitionPlugin implements MethodCallHandler, RecognitionListener, PluginRegistry.RequestPermissionsResultListener {
-
+public class FlutterSpeechRecognitionPlugin implements FlutterPlugin, ActivityAware, MethodCallHandler, RecognitionListener, PluginRegistry.RequestPermissionsResultListener {
+  final static String channelName = "com.flutter.speech_recognition";
   private static final String LOG_TAG = "FlutterSpeechPlugin";
   private static final int MY_PERMISSIONS_RECORD_AUDIO = 16669;
   private SpeechRecognizer speech;
   private MethodChannel speechChannel;
   private String transcription = "";
-  private Intent recognizerIntent;
-  private Activity activity;
+  private final Intent recognizerIntent;
+  private ActivityPluginBinding activityPluginBinding;
   private Result permissionResult;
 
-  /**
-   * Plugin registration.
-   */
-  public static void registerWith(Registrar registrar) {
-    final MethodChannel channel = new MethodChannel(registrar.messenger(), "com.flutter.speech_recognition");
-    final FlutterSpeechRecognitionPlugin plugin = new FlutterSpeechRecognitionPlugin(registrar.activity(), channel);
-    channel.setMethodCallHandler(plugin);
-    registrar.addRequestPermissionsResultListener(plugin);
-  }
-
-  private FlutterSpeechRecognitionPlugin(Activity activity, MethodChannel channel) {
-    this.speechChannel = channel;
-    this.speechChannel.setMethodCallHandler(this);
-    this.activity = activity;
-
-    speech = SpeechRecognizer.createSpeechRecognizer(activity.getApplicationContext());
-    speech.setRecognitionListener(this);
-
+  public FlutterSpeechRecognitionPlugin() {
     recognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
     recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
             RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
@@ -59,18 +44,22 @@ public class FlutterSpeechRecognitionPlugin implements MethodCallHandler, Recogn
   }
 
   @Override
-  public void onMethodCall(MethodCall call, Result result) {
+  public void onMethodCall(@NonNull MethodCall call, @NonNull Result result) {
     switch (call.method) {
       case "speech.activate":
         Log.d(LOG_TAG, "Current Locale : " + call.arguments.toString());
         recognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, getLocaleCode(call.arguments.toString()));
+        if (!SpeechRecognizer.isRecognitionAvailable(activityPluginBinding.getActivity())) {
+          result.error("ERROR_NO_SPEECH_RECOGNITION_AVAILABLE", "Device is not compatible with speech recognition", null);
+          return;
+        }
 
-        if (activity.checkCallingOrSelfPermission(Manifest.permission.RECORD_AUDIO)
+        if (activityPluginBinding.getActivity().checkCallingOrSelfPermission(Manifest.permission.RECORD_AUDIO)
                 == PackageManager.PERMISSION_GRANTED) {
             result.success(true);
         } else {
           permissionResult = result;
-          ActivityCompat.requestPermissions(activity, new String[]{Manifest.permission.RECORD_AUDIO}, MY_PERMISSIONS_RECORD_AUDIO);
+          ActivityCompat.requestPermissions(activityPluginBinding.getActivity(), new String[]{Manifest.permission.RECORD_AUDIO}, MY_PERMISSIONS_RECORD_AUDIO);
         }
 
         break;
@@ -182,5 +171,58 @@ public class FlutterSpeechRecognitionPlugin implements MethodCallHandler, Recogn
       return true;
     }
     return false;
+  }
+
+  private void onActivityAttached(ActivityPluginBinding binding) {
+    activityPluginBinding = binding;
+    binding.addRequestPermissionsResultListener(this);
+    if (speech != null) {
+      speech.cancel();
+      speech.destroy();
+      speech = null;
+    }
+    speech = SpeechRecognizer.createSpeechRecognizer(activityPluginBinding.getActivity());
+    speech.setRecognitionListener(this);
+  }
+
+  private void onActivityDetached() {
+    activityPluginBinding.removeRequestPermissionsResultListener(this);
+    activityPluginBinding = null;
+    if (speech != null) {
+      speech.cancel();
+      speech.destroy();
+      speech = null;
+    }
+  }
+
+  @Override
+  public void onAttachedToEngine(@NonNull FlutterPluginBinding binding) {
+    speechChannel = new MethodChannel(binding.getBinaryMessenger(), channelName);
+    speechChannel.setMethodCallHandler(this);
+  }
+
+  @Override
+  public void onDetachedFromEngine(@NonNull FlutterPluginBinding binding) {
+
+  }
+
+  @Override
+  public void onAttachedToActivity(@NonNull ActivityPluginBinding binding) {
+    onActivityAttached(binding);
+  }
+
+  @Override
+  public void onDetachedFromActivityForConfigChanges() {
+    onActivityDetached();
+  }
+
+  @Override
+  public void onReattachedToActivityForConfigChanges(@NonNull ActivityPluginBinding binding) {
+    onActivityAttached(binding);
+  }
+
+  @Override
+  public void onDetachedFromActivity() {
+    onActivityDetached();
   }
 }

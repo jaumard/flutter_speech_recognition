@@ -47,7 +47,7 @@
   }
 }
 
-- (void) cancel:(FlutterResult) result {
+- (void)cancel:(FlutterResult) result {
     if(speechTimer) {
         [speechTimer invalidate];
     }
@@ -61,7 +61,8 @@
     }
 }
 
-- (void) stop:(FlutterResult) result {
+- (void)stop:(FlutterResult) result {
+    [self resetSession];
     if(speechTimer) {
         [speechTimer invalidate];
     }
@@ -77,17 +78,26 @@
     }
 }
 
-- (void) start:(FlutterResult) result {
+- (void)resetSession {
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    [audioSession setCategory:AVAudioSessionCategoryPlayback
+                  withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionMixWithOthers
+                        error:nil];
+    [audioSession setMode:AVAudioSessionModeDefault error:nil];
+}
+
+- (void)start:(FlutterResult)result {
     if(audioEngine.isRunning) {
         [self stop:nil];
     }
     
     [self cancel:nil];
-    
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryRecord mode:AVAudioSessionModeVoiceChat options:AVAudioSessionCategoryOptionMixWithOthers error:nil];
-    [audioSession setMode:AVAudioSessionModeMeasurement error:nil];
-    [audioSession setActive:TRUE withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
+    [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord
+                  withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionMixWithOthers
+                        error:nil];;
+   [audioSession setMode:AVAudioSessionModeMeasurement error:nil];
+   [audioSession setActive:TRUE withOptions:AVAudioSessionSetActiveOptionNotifyOthersOnDeactivation error:nil];
     
     recognitionRequest = [[SFSpeechAudioBufferRecognitionRequest alloc] init];
     

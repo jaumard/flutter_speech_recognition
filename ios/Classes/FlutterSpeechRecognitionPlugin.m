@@ -83,7 +83,6 @@
     [audioSession setCategory:AVAudioSessionCategoryPlayback
                   withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionMixWithOthers
                         error:nil];
-    NSLog(@"TEST: resetSession");
 }
 
 - (void)start:(FlutterResult) result {
@@ -92,7 +91,6 @@
     }
     
     [self cancel:nil];
-    NSLog(@"TEST: startSession");
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setCategory:AVAudioSessionCategoryPlayAndRecord
                   withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionMixWithOthers

@@ -83,9 +83,10 @@
     [audioSession setCategory:AVAudioSessionCategoryPlayback
                   withOptions:AVAudioSessionCategoryOptionDefaultToSpeaker | AVAudioSessionCategoryOptionMixWithOthers
                         error:nil];
+    [audioSession setMode:AVAudioSessionModeDefault error:nil];
 }
 
-- (void)start:(FlutterResult) result {
+- (void)start:(FlutterResult)result {
     if(audioEngine.isRunning) {
         [self stop:nil];
     }

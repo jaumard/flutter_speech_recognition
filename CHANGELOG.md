@@ -1,3 +1,8 @@
+## 2.0.1
+
+* fix compilation issue on android
+* recreate example projects
+
 ## 2.0.0
 
 * migrate to null safety
